@@ -47,7 +47,7 @@ export default function Index() {
     <div className="column-66">
       <h1 className="xlarge-font"><b>Rates</b></h1>
       <h1 className="large-font" style={{color:"#F4511E"}}><b>Much, how?</b></h1>
-      <p><span style={{fontSize:"24px"}}>From just 0.00013BTC an hour.</span> Sharp and clean solutions with a proficient developer, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <p><span style={{fontSize:"24px"}}>From just 0.00025BTC an hour.</span> Sharp and clean solutions with a proficient developer, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
       <button className="button" style={{backgroundColor:"#F4511E"}} onClick={visitLivestream}>View Livestream</button>
     </div>
   </div>
