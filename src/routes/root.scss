@@ -9,7 +9,7 @@
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
 
-  opacity: 0.8;
+  /* opacity: 0.8; */
 
   z-index: 50;
 }
@@ -40,6 +40,17 @@
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 43px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  /* background-color: #04AA6D; */
+  z-index: 100;
+  opacity: 0.8;
 }
 
 /* Footer */
