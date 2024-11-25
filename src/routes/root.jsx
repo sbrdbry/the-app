@@ -75,15 +75,12 @@ export default function Root() {
           <FontAwesomeIcon icon={faBars} />
         </a>        
       </div>
-      <div className="scroll-progress" style={{backgroundImage: `linear-gradient(to right, #F7931A ${scrollPercentage}%, rgba(0,0,0,0) ${scrollPercentage}%)`}}></div>
+
+      <div className="scroll-progress" style={toggled ? {top: "93px", backgroundImage: `linear-gradient(to right, #F7931A ${scrollPercentage}%, rgba(0,0,0,0) ${scrollPercentage}%)`} : {top: "43px", backgroundImage: `linear-gradient(to right, #F7931A ${scrollPercentage}%, rgba(0,0,0,0) ${scrollPercentage}%)`}}></div>
 
       <main id="main" style={{marginTop: navHeight}}>
         <Outlet />
       </main>
-
-      <div className="footer">
-        <h2><a className="bitcoin-donate" href="bitcoin:bc1qae66ucqsf5nkrxwca7z93rzd8dh95793rk0f3r">bc1qae66ucqsf5nkrxwca7z93rzd8dh95793rk0f3r</a></h2>
-      </div>
     </>
   )
 }
