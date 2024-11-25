@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Outlet, NavLink } from "react-router-dom";
 
@@ -9,6 +9,13 @@ import './root.scss';
 
 export default function Root() {
   const [scrollPercentage, setScrollPercentage] = useState(0);
+
+  /*const [innerHeight, setInnerHeight] = useState(0);
+  const myInnerHeightRef = React.useRef(innerHeight);
+  const setMyInnerHeight = data => {
+    myInnerHeightRef.current = data;
+    setInnerHeight(data);
+  };*/
 
   const [ toggled, setToggled ] = useState(false);
   const [ navHeight, setNavHeight ] = useState(0);
@@ -36,10 +43,22 @@ export default function Root() {
   }, []);
 
   const handleScroll = () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollPercent = (scrollTop / scrollHeight) * 100;
     setScrollPercentage(scrollPercent);
+
+    if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight) {
+        // you're at the bottom of the page
+        //console.log("bottom of the page");
+        setScrollPercentage(100);
+    }
+
+    /*if (window.innerHeight !== myInnerHeightRef.current) {
+      console.log("window.innerHeight", window.innerHeight);
+      console.log("innerHeight", myInnerHeightRef.current);
+      setMyInnerHeight(window.innerHeight);
+    }*/
   };
 
   useEffect(() => {
@@ -50,21 +69,20 @@ export default function Root() {
   return (
     <>
       <div className={toggled ? "topnav responsive" : "topnav"} style={{opacity: "0.8"}} id="myTopnav">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/news">News</NavLink>
+        <NavLink to="/">Home</NavLink>        
         <NavLink to="/about">livestream</NavLink>
         <a href="#" className="icon" onClick={(event) => myFunction(event)}>
           <FontAwesomeIcon icon={faBars} />
         </a>        
       </div>
-      <div className="scroll-progress" style={{backgroundImage: `linear-gradient(to right, orange ${scrollPercentage}%, rgba(0,0,0,0) ${scrollPercentage}%)`}}></div>
+      <div className="scroll-progress" style={{backgroundImage: `linear-gradient(to right, #F7931A ${scrollPercentage}%, rgba(0,0,0,0) ${scrollPercentage}%)`}}></div>
 
       <main id="main" style={{marginTop: navHeight}}>
         <Outlet />
       </main>
 
       <div className="footer">
-        <h2><a style={{fontSize: "14px"}} href="bitcoin:bc1qae66ucqsf5nkrxwca7z93rzd8dh95793rk0f3r">bc1qae66ucqsf5nkrxwca7z93rzd8dh95793rk0f3r</a></h2>
+        <h2><a className="bitcoin-donate" href="bitcoin:bc1qae66ucqsf5nkrxwca7z93rzd8dh95793rk0f3r">bc1qae66ucqsf5nkrxwca7z93rzd8dh95793rk0f3r</a></h2>
       </div>
     </>
   )

@@ -12,9 +12,7 @@ import {
 
 import Root from "./routes/root.jsx";
 
-import News from "./routes/news.jsx";
 import About from "./routes/about.jsx";
-
 import Index from "./routes/index.jsx";
 import ErrorPage from "./error-page.jsx";
 
@@ -28,7 +26,6 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
           { index: true, element: <Index /> },
-          { path: "/news", element: <News /> },
           { path: "/about", element: <About /> },
         ],
       },
