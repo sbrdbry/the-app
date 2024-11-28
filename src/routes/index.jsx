@@ -1,4 +1,6 @@
 
+import { useOutletContext } from "react-router-dom";
+
 import img1 from '../images/logo.png';
 import me1 from '../images/me_lol.jpg';
 import bitcoin from '../images/bitcoin-landscape.png';
@@ -6,6 +8,8 @@ import bitcoin from '../images/bitcoin-landscape.png';
 import './index.scss';
 
 export default function Index() {
+  const [colorSwitch] = useOutletContext();
+
   const handleClick = () => {
     const link = document.createElement('a');
     link.href = 'downloads/Stuart Bradbury - Curriculum Vitae.docx'; // Replace with the URL of your file
@@ -30,7 +34,7 @@ export default function Index() {
     <div className="column-66">
       <h1 className="xlarge-font"><b>Stuart <span className="surname">Bradbury</span></b></h1>
       <h1 className="large-font" style={{color: "MediumSeaGreen"}}><b>Who am I?</b></h1>
-      <p><span style={{fontSize: "36px"}}>Develop software like a pro.</span> You should work with me because lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Contact us by way of <a href="mailto:sbrdbry@gmail.com">sbrdbry@gmail.com</a> / <a href="tel:+44 7389 082 177">+44 7389 082 177</a>.</p>
+      <p><span style={{fontSize: "36px"}}>Develop software like a pro.</span> You should work with me because lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Contact me by way of <a href="mailto:sbrdbry@gmail.com">sbrdbry@gmail.com</a> / <a href="tel:+44 7389 082 177">+44 7389 082 177</a>.</p>
       <button className="button" onClick={handleClick}>Download C.V.</button>
     </div>
     <div className="column-33">
@@ -39,7 +43,7 @@ export default function Index() {
   </div>
 </div>
 
-<div className="container" style={{backgroundColor:"#f1f1f1"}}>
+<div className="container" style={colorSwitch ? {backgroundColor:"#020617", color: "white"} : {backgroundColor:"#f1f1f1", color: "black"}}>
   <div className="row">
     <div className="column-33">
       <img src={me1} className="photo" alt="App" width="335" height="471"/>
@@ -47,7 +51,7 @@ export default function Index() {
     <div className="column-66">
       <h1 className="xlarge-font"><b>Rates</b></h1>
       <h1 className="large-font" style={{color:"#F4511E"}}><b>Much, how?</b></h1>
-      <p><span style={{fontSize:"24px"}}>From just 0.00025BTC an hour.</span> Sharp and clean solutions with a proficient developer, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <p><span style={{fontSize:"24px"}}>From just 0.00025BTC an hour.</span> Sharp and clean solutions with proficient developer, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
       <button className="button" style={{backgroundColor:"#F4511E"}} onClick={visitLivestream}>View Livestream</button>
     </div>
   </div>
@@ -67,7 +71,7 @@ export default function Index() {
   </div>
 </div>
 
-<div className="footer">
+<div className="footer" style={colorSwitch ? {backgroundColor:"#020617"} : {backgroundColor:"#ddd"}}>
   <h2><a className="bitcoin-donate" href="bitcoin:bc1qae66ucqsf5nkrxwca7z93rzd8dh95793rk0f3r">bc1qae66ucqsf5nkrxwca7z93rzd8dh95793rk0f3r</a></h2>
 </div>
   </>
