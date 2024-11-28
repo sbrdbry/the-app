@@ -34,7 +34,7 @@ export default function Index() {
           <div className="column-66">
             <h1 className="xlarge-font"><b>Stuart <span className="surname">Bradbury</span></b></h1>
             <h1 className="large-font" style={{color: "MediumSeaGreen"}}><b>Who am I?</b></h1>
-            <p><span style={{fontSize: "36px"}}>Develop software like a pro.</span> You should work with me because lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Contact me by way of <a href="mailto:sbrdbry@gmail.com">sbrdbry@gmail.com</a> / <a href="tel:+44 7389 082 177">+44 7389 082 177</a>.</p>
+            <p><span style={{fontSize: "36px"}}>Develop software like a pro.</span> You should work with me because lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Contact me via <a href="mailto:sbrdbry@gmail.com">sbrdbry@gmail.com</a> / <a href="tel:+44 7389 082 177">+44 7389 082 177</a>.</p>
             <button className="button" onClick={handleClick}>Download C.V.</button>
           </div>
           <div className="column-33">
