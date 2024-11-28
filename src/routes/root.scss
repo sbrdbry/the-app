@@ -10,7 +10,7 @@
   width: 100%; /* Full width */
 
   opacity: 0.8;
-  
+
   z-index: 50;
 }
 
@@ -51,6 +51,10 @@
   /* background-color: #04AA6D; */
   z-index: 100;
   opacity: 0.8;
+}
+
+.no-scroll-progress {
+  display: none;
 }
 
 .bitcoin-donate {

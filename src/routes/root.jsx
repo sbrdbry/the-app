@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, useLocation } from "react-router-dom";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -9,6 +9,8 @@ import './root.scss';
 import './toggle.scss';
 
 export default function Root() {
+  const location = useLocation();
+
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
   const [colorSwitch, setColorSwitch] = useState(false);
@@ -80,21 +82,30 @@ export default function Root() {
     return () => mediaQuery.removeEventListener('change', handleMatchChange);
   }, []);
 
+  useEffect(() => {
+    //console.log(location.pathname);
+    if (location.pathname === "/") {
+      document.title = "Home | Stuart Bradbury";
+    } else if (location.pathname === "/about") {
+      document.title = "livestream | Stuart Bradbury";
+    }
+  }, [location]);
+
   return (
     <>
-      <div className={toggled ? "topnav responsive" : "topnav"} style={colorSwitch ? {background: "#020617"} : {background: "#333"}} id="myTopnav">
+      <div className={toggled ? "topnav responsive" : "topnav"} style={colorSwitch && location.pathname === "/" ? {background: "#020617"} : {background: "#333"}} id="myTopnav">
         <NavLink to="/">Home</NavLink>        
         <NavLink to="/about">livestream</NavLink>
         <label className="switch" style={toggled ? {display: "none"} : {display: "inline-block"}}>
           <input type="checkbox" id="color-switch" onClick={handleSwitch} />
-          <span className="slider round"></span>
+          <span className={location.pathname === "/" ? "slider round" : "no-scroll-progress"}></span>
         </label>
         <a href="#" className="icon" onClick={(event) => myFunction(event)}>
           <FontAwesomeIcon icon={faBars} />
         </a>
       </div>
 
-      <div className="scroll-progress" style={toggled ? {top: "93px", backgroundImage: `linear-gradient(to right, #F7931A ${scrollPercentage}%, rgba(0,0,0,0) ${scrollPercentage}%)`} : {top: "43px", backgroundImage: `linear-gradient(to right, #F7931A ${scrollPercentage}%, rgba(0,0,0,0) ${scrollPercentage}%)`}}></div>
+      <div className={location.pathname === "/" ? "scroll-progress" : "no-scroll-progress"} style={toggled ? {top: "93px", backgroundImage: `linear-gradient(to right, #F7931A ${scrollPercentage}%, rgba(0,0,0,0) ${scrollPercentage}%)`} : {top: "43px", backgroundImage: `linear-gradient(to right, #F7931A ${scrollPercentage}%, rgba(0,0,0,0) ${scrollPercentage}%)`}}></div>
 
       <main id="main" style={{marginTop: navHeight}}>
         <Outlet context={[colorSwitch]} />
