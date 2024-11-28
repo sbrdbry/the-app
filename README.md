@@ -1,6 +1,6 @@
 # the-app
 
-This is the code for the [sbrdbry.com](https://sbrdbry.com) website.
+This is the code for the [sbrdbry.com](https://sbrdbry.com) website. Run it locally:
 
 ```bash
 $ git clone https://github.com/sbrdbry/the-app.git
