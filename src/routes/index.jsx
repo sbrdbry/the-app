@@ -20,7 +20,7 @@ export default function Index() {
   };
 
   const visitLivestream = () => {
-    window.open('/about', "_self");
+    window.open('/livestream', "_self");
   }
 
   const visitGithub = () => {
