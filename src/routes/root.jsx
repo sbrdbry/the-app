@@ -50,18 +50,6 @@ export default function Root() {
     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollPercent = (scrollTop / scrollHeight) * 100;
     setScrollPercentage(scrollPercent);
-
-    /*if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight) {
-        // you're at the bottom of the page
-        //console.log("bottom of the page");
-        setScrollPercentage(100);
-    }*/
-
-    /*if (window.innerHeight !== myInnerHeightRef.current) {
-      console.log("window.innerHeight", window.innerHeight);
-      console.log("innerHeight", myInnerHeightRef.current);
-      setMyInnerHeight(window.innerHeight);
-    }*/
   };
 
   useEffect(() => {
