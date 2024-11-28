@@ -95,7 +95,7 @@ export default function Root() {
     <>
       <div className={toggled ? "topnav responsive" : "topnav"} style={colorSwitch && location.pathname === "/" ? {background: "#020617"} : {background: "#333"}} id="myTopnav">
         <NavLink to="/">Home</NavLink>        
-        <NavLink to="/about">livestream</NavLink>
+        <NavLink to="/livestream">livestream</NavLink>
         <label className="switch" style={toggled ? {display: "none"} : {display: "inline-block"}}>
           <input type="checkbox" id="color-switch" onClick={handleSwitch} />
           <span className={location.pathname === "/" ? "slider round" : "no-scroll-progress"}></span>
