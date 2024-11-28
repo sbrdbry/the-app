@@ -13,13 +13,6 @@ export default function Root() {
 
   const [colorSwitch, setColorSwitch] = useState(false);
 
-  /*const [innerHeight, setInnerHeight] = useState(0);
-  const myInnerHeightRef = React.useRef(innerHeight);
-  const setMyInnerHeight = data => {
-    myInnerHeightRef.current = data;
-    setInnerHeight(data);
-  };*/
-
   const [ toggled, setToggled ] = useState(false);
   const [ navHeight, setNavHeight ] = useState(0);
 
@@ -89,7 +82,7 @@ export default function Root() {
 
   return (
     <>
-      <div className={toggled ? "topnav responsive" : "topnav"} style={{opacity: "0.8"}} id="myTopnav">
+      <div className={toggled ? "topnav responsive" : "topnav"} style={colorSwitch ? {background: "#000"} : {background: "#333"}} id="myTopnav">
         <NavLink to="/">Home</NavLink>        
         <NavLink to="/about">livestream</NavLink>
         <label className="switch" style={toggled ? {display: "none"} : {display: "inline-block"}}>
