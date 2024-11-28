@@ -10,3 +10,5 @@ $ docker compose up -d
 ```
 
 Once docker is up you can visit http://localhost:8090 in the browser.
+
+![image of the-app](https://github.com/sbrdbry/the-app/blob/main/src/images/the-app.png)
