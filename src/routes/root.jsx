@@ -82,7 +82,7 @@ export default function Root() {
 
   return (
     <>
-      <div className={toggled ? "topnav responsive" : "topnav"} style={colorSwitch ? {background: "#000"} : {background: "#333"}} id="myTopnav">
+      <div className={toggled ? "topnav responsive" : "topnav"} style={colorSwitch ? {background: "#020617"} : {background: "#333"}} id="myTopnav">
         <NavLink to="/">Home</NavLink>        
         <NavLink to="/about">livestream</NavLink>
         <label className="switch" style={toggled ? {display: "none"} : {display: "inline-block"}}>
