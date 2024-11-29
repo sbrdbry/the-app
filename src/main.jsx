@@ -8,6 +8,7 @@ import './index.scss'
 import {
   createBrowserRouter,
   RouterProvider,
+  Navigate,
 } from "react-router-dom";
 
 import Root from "./routes/root.jsx";
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <ErrorPage />,
+    errorElement: <Navigate replace to="/" />,
     children: [
       {
         errorElement: <ErrorPage />,

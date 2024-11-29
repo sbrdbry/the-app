@@ -2,12 +2,6 @@ body {
   margin: 0;
 }
 
-// Height to test the sticky navbar and margin for size of navbar when expanded/collapsed
-main {
-  //height: 1000px;
-  //margin-top: 48px;
-}
-
 .column {
   float: left;
   width: 33.33%;
@@ -33,10 +27,3 @@ main {
     font-size: 45px;
   }
 }
-
-// Remove top margin when the screen is less than 600 pixels
-/*@media screen and (max-width: 600px) {
-  main {
-    margin-top: 0;
-  }
-}*/
