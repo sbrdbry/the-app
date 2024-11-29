@@ -86,7 +86,7 @@ export default function Root() {
     //console.log(location.pathname);
     if (location.pathname === "/") {
       document.title = "Home | Stuart Bradbury";
-    } else if (location.pathname === "/about") {
+    } else if (location.pathname === "/livestream") {
       document.title = "livestream | Stuart Bradbury";
     }
   }, [location]);
