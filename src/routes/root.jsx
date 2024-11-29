@@ -105,7 +105,7 @@ export default function Root() {
         </a>
       </div>
 
-      <div className={location.pathname === "/" ? "scroll-progress" : "no-scroll-progress"} style={toggled ? {top: "93px", backgroundImage: `linear-gradient(to right, #F7931A ${scrollPercentage}%, rgba(0,0,0,0) ${scrollPercentage}%)`} : {top: "43px", backgroundImage: `linear-gradient(to right, #F7931A ${scrollPercentage}%, rgba(0,0,0,0) ${scrollPercentage}%)`}}></div>
+      <div className={location.pathname === "/" ? "scroll-progress" : "no-scroll-progress"} style={toggled ? {top: "93px", backgroundImage: `linear-gradient(to right, #F7931A ${scrollPercentage}%, rgba(0,0,0,0) ${scrollPercentage}%)`} : {top: "45px", backgroundImage: `linear-gradient(to right, #F7931A ${scrollPercentage}%, rgba(0,0,0,0) ${scrollPercentage}%)`}}></div>
 
       <main id="main" style={{marginTop: navHeight}}>
         <Outlet context={[colorSwitch]} />
