@@ -63,7 +63,6 @@ export default function Root() {
   }, [colorSwitch]);
 
   const handleSwitch = () => {
-    //console.log("handleSwitch");
     setColorSwitch(!colorSwitch);
   }
 
@@ -78,18 +77,24 @@ export default function Root() {
     mediaQuery.addEventListener('change', handleMatchChange);
     setColorSwitch(mediaQuery.matches);
     
-    // Cleanup event listener on component unmount
     return () => mediaQuery.removeEventListener('change', handleMatchChange);
   }, []);
 
   useEffect(() => {
-    //console.log(location.pathname);
     if (location.pathname === "/") {
       document.title = "Home | Stuart Bradbury";
     } else if (location.pathname === "/livestream") {
       document.title = "livestream | Stuart Bradbury";
     }
   }, [location]);
+
+  const mystyle = toggled ? {
+    top: "93px",
+    backgroundImage: `linear-gradient(to right, #F7931A ${scrollPercentage}%, rgba(0,0,0,0) ${scrollPercentage}%)`,
+  } : {
+    top: "45px",
+    backgroundImage: `linear-gradient(to right, #F7931A ${scrollPercentage}%, rgba(0,0,0,0) ${scrollPercentage}%)`,
+  };
 
   return (
     <>
@@ -105,7 +110,10 @@ export default function Root() {
         </a>
       </div>
 
-      <div className={location.pathname === "/" ? "scroll-progress" : "no-scroll-progress"} style={toggled ? {top: "93px", backgroundImage: `linear-gradient(to right, #F7931A ${scrollPercentage}%, rgba(0,0,0,0) ${scrollPercentage}%)`} : {top: "45px", backgroundImage: `linear-gradient(to right, #F7931A ${scrollPercentage}%, rgba(0,0,0,0) ${scrollPercentage}%)`}}></div>
+      <div
+        className={location.pathname === "/" ? "scroll-progress" : "no-scroll-progress"}
+        style={mystyle}
+      ></div>
 
       <main id="main" style={{marginTop: navHeight}}>
         <Outlet context={[colorSwitch]} />
